@@ -1,0 +1,57 @@
+#start{
+    height: 100vh;
+    width: 100vw;
+    background-color: #1A1917;
+}
+
+#start-text{
+    position: absolute;
+    top: 70px;
+    right: 60px;
+    
+
+    Button{
+        border-radius: 20px !important;
+        border: 2px solid #cbb39d;
+        color: #cbb39d !important;
+    }
+
+    Button:hover{
+        background-color: #cbb39d !important;
+        border: 2px solid #231F1E !important;
+        color: #231F1E !important;
+    }
+}
+
+@media (max-width: 850.98px) { 
+    #start-text{
+        top: 340px;
+    }
+    #start{
+        height: 122vh;
+    }
+}
+
+
+@media (max-width: 740.98px) { 
+    #start-text{
+        top: 70px;
+    }
+   
+}
+@media (max-width: 520.98px) { 
+    #start-text{
+        top: 200px;
+    }
+   
+}
+@media (max-width: 417.98px) { 
+    #start{
+        height: 150vh;
+    }
+}
+
+
+
+
+
