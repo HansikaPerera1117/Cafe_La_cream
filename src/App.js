@@ -5,16 +5,19 @@ import {Provider} from 'react-redux'
 import store from "./redux/storeConfig/store"
 
 import Start from './views/start/Start';
-import Login, { SignUp } from './views/signUp/SignUp';
+import  SignUp  from './views/signUp/SignUp';
+import Login from './views/loging/Login';
 import  LogoLaCream from './assets/images/Logo.png'
 import NavBar from './components/navBar/NavBar';
 import PageMain from './views/pageMain/PageMain';
 import PageProducts from './views/pageProducts/PageProducts';
+import {CardData} from './constants/CardData'
 
 
 function App() {
+
   return (
-    <Provider store={store}>
+   
       <div className="App container-flud">
         <head>
           <title>Cafe La Cream</title>
@@ -32,6 +35,7 @@ function App() {
         <NavBar/>
         <PageMain/>
         <PageProducts/>
+        <CardData/>
         
         </main>
         <footer>
@@ -39,7 +43,7 @@ function App() {
         </footer>
         
       </div>
-    </Provider>
+    
   );
 }
 
