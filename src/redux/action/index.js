@@ -1,3 +1,7 @@
 export {buyMohito} from './beverages/mohitoAction'
 export {buyBubbleTea} from './beverages/bubbleTeaAction'
 export {buyCapachino} from './beverages/capachinoAction'
+export {buyIceCoffee} from './beverages/iceCoffeeAction'
+export {buyLatte} from './beverages/latteAction'
+export {buyPinappleMilkShake} from './beverages/pineappleMSAction'
+export {buyStrawberryMilkShake} from './beverages/strawberryMSAction'

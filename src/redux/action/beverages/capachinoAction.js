@@ -6,5 +6,3 @@ export const buyCapachino = (data) =>{
         payload : data
     }
 }
-
-export default buyCapachino
