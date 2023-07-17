@@ -221,7 +221,7 @@ export function CardData() {
     {
       id: 1,
       imageSrc:`${beefBerger}`,
-      header:'Double Cheese Chicken Burger',
+      header:'Spaghetti With Spicy Chicken Source',
       meta:'Burgers Section',
       description:'Double Cheese Chicken Burger Lorem ipsum dolor sit amet,',
     },

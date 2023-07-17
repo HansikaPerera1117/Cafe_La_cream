@@ -10,3 +10,8 @@ export {buyBeefBurger} from './buns/beefBurgerAction'
 export {buySandwitch} from './buns/sandwitchAction'
 export {buyChickenCheeseBurger} from './buns/chickenCheeseBurgerAction'
 export {buySubmarine} from './buns/submarineAction'
+
+export {buySpaghetti} from './mainMeals/spaghettiAction'
+export {buyMashPotato} from './mainMeals/mashPotatoAction'
+export {buyNoodles} from './mainMeals/noodlesAction'
+export {buyBiriyani} from './mainMeals/biriyaniAction'

@@ -14,6 +14,11 @@ import sandwitchReducer from "./buns/sandwitchReducer"
 import chickenCheeseBurgerReducer from "./buns/chickenCheeseBurgerReducer"
 import submarineReducer from "./buns/submarineReducer"
 
+import spaghettiReducer from "./mainMeals/spaghettiReducer"
+import mashPotatoReducer from "./mainMeals/mashPotatoReducer"
+import noodlesReducer from "./mainMeals/noodlesReducer"
+import biriyaniReducer from "./mainMeals/biriyaniReducer"
+
 const rootReducer = combineReducers({
     mohito : mohitoReducer,
     bubbleTea : bubbleTeaReducer,
@@ -28,9 +33,11 @@ const rootReducer = combineReducers({
     sandwitch : sandwitchReducer,
     chickenCheeseBurger : chickenCheeseBurgerReducer,
     submarine : submarineReducer,
-    
 
-
+    spaghetti : spaghettiReducer,
+    mashPotato : mashPotatoReducer,
+    noodles : noodlesReducer,
+    biriyani : beefBurgerReducer
 
 })
 
