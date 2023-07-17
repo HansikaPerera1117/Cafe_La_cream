@@ -3,7 +3,7 @@ import mohito from '../../../assets/images/page/mohito.jpg'
 
 const initialState = {
     imageSrc:`${mohito}`,
-    name : 'Mohito (Alcoholic/Non-Alcoholic)',
+    name : 'Mohito(Alcoholic/Non-Alcoholic)',
     section : 'Beverages Section',
     description : 'Mohito (Alcoholic/Non-Alcoholic)',
     price : 'Rs 350',

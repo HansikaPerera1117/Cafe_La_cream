@@ -9,6 +9,11 @@ import latteReducer from "./beverages/latteReducer"
 import pinappleMilkShakeReducer from "./beverages/pineappleMSReducer"
 import strawberryMilkShakeReducer from "./beverages/strawberryMSReducer"
 
+import beefBurgerReducer from "./buns/beefBurgerReducer"
+import sandwitchReducer from "./buns/sandwitchReducer"
+import chickenCheeseBurgerReducer from "./buns/chickenCheeseBurgerReducer"
+import submarineReducer from "./buns/submarineReducer"
+
 const rootReducer = combineReducers({
     mohito : mohitoReducer,
     bubbleTea : bubbleTeaReducer,
@@ -18,6 +23,14 @@ const rootReducer = combineReducers({
     latte : latteReducer,
     pinappleMS : pinappleMilkShakeReducer,
     strawberryMS : strawberryMilkShakeReducer,
+
+    beefBurger : beefBurgerReducer,
+    sandwitch : sandwitchReducer,
+    chickenCheeseBurger : chickenCheeseBurgerReducer,
+    submarine : submarineReducer,
+    
+
+
 
 })
 

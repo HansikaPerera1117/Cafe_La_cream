@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import {Card} from 'semantic-ui-react'
 import Product from "../../components/cards/Product";
-import { beveragesData } from "../../constants/CardData";
-import { bunsData } from "../../constants/CardData";
-import { mainMealData } from "../../constants/CardData";
+import * as  CardData from "../../constants/CardData";
+// import beveragesData   from "../../constants/CardData";
 import "./pageProducts.scss"
 
 
 export class PageProducts extends Component {
+  
   render() {
 
- 
+ console.log(CardData.beveragesData,'pageproduct');
 
-    const beverages = beveragesData.map((item) => (
+    const beverages = CardData.beveragesData.map((item) => (
       <Product
         imageSrc={item.imageSrc}
         header={item.header}
@@ -21,7 +21,7 @@ export class PageProducts extends Component {
       />
     ));
 
-    const buns = bunsData.map((item) => (
+    const buns = CardData.bunsData.map((item) => (
       <Product
         imageSrc={item.imageSrc}
         header={item.header}
@@ -30,7 +30,7 @@ export class PageProducts extends Component {
       />
     ));
 
-    const mainMeals = mainMealData.map((item) => (
+    const mainMeals = CardData.mainMealData.map((item) => (
       <Product
         imageSrc={item.imageSrc}
         header={item.header}

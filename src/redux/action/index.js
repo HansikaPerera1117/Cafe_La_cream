@@ -5,3 +5,8 @@ export {buyIceCoffee} from './beverages/iceCoffeeAction'
 export {buyLatte} from './beverages/latteAction'
 export {buyPinappleMilkShake} from './beverages/pineappleMSAction'
 export {buyStrawberryMilkShake} from './beverages/strawberryMSAction'
+
+export {buyBeefBurger} from './buns/beefBurgerAction'
+export {buySandwitch} from './buns/sandwitchAction'
+export {buyChickenCheeseBurger} from './buns/chickenCheeseBurgerAction'
+export {buySubmarine} from './buns/submarineAction'
