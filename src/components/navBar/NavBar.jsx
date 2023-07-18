@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Menu,Image , Header} from 'semantic-ui-react'
 import  LogoLaCream from '../../assets/images/Logo.png'
 import './navBar.scss'
+import { Link } from 'react-router-dom';
 
 
 export class NavBar extends Component {
@@ -56,18 +57,22 @@ export class NavBar extends Component {
           />
           </Menu.Menu>
           <Menu.Menu position='right'>
+          <Link style={{textDecoration: "none", marginTop:20}} to="/login">
             <Menu.Item
               name='LogIn'
               icon='user'
               active={activeItem === 'logout'}
               onClick={this.handleItemClick}
             />
-            <Menu.Item
-              name='SignIn'
-              icon='sign-in'
-              active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
-            />
+            </Link>
+            <Link style={{textDecoration: "none", marginTop:20}} to="/signup">
+              <Menu.Item
+                name='SignIn'
+                icon='sign-in'
+                active={activeItem === 'logout'}
+                onClick={this.handleItemClick}
+              />
+            </Link>
           </Menu.Menu>
         </Menu>
 

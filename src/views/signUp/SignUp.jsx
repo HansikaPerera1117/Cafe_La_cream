@@ -4,9 +4,18 @@ import './signUp.scss'
 import  BG from '../../assets/images/bg-3.png'
 import  loginImg from '../../assets/images/signup.jpg'
 import  LogoLaCream from '../../assets/images/Logo.png'
+import { Link } from 'react-router-dom';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 export class SignUp extends Component {
+
+  componentDidMount() {
+    AOS.init();
+  }
+
   render() {
 
     const myStyleSignInBg={
@@ -25,14 +34,14 @@ export class SignUp extends Component {
                 <div id='signUpFCont' className='row'>
                 <div className="col-5">
                   <div className="row  align-items-center justify-content-center">
-                        <div className="col-8">
+                        <div data-aos="flip-right" data-aos-duration="2000" className="col-8">
                             <Image className='shadow rounded'  src={loginImg}/>
                         </div>
                   </div>
                   </div>
                   <div className="col-6">
                     <div className="row  align-items-center justify-content-start">
-                        <div className="col-8 bg-light shadow" style={{height:550,borderRadius:20}}>
+                        <div data-aos="flip-left" data-aos-delay ="1100" data-aos-duration="2000" className="col-8 bg-light shadow" style={{height:550,borderRadius:20}}>
                             <Grid textAlign='center'style={{ height: 550 }} verticalAlign='middle'>
                               <Grid.Column style={{ maxWidth: 450 }}>
                                 <Header as='h1' textAlign='center' style={{fontFamily:'Arima',fontWeight:'bold'}}>
@@ -57,7 +66,7 @@ export class SignUp extends Component {
                                   </Segment>
                                 </Form>
                                 <Message className='mt-5'>
-                                Already have an account ? <a href='#' style={{textDecoration:"none",color:"#551e19"}}>Log-In</a>
+                                Already have an account ?  <Link style={{textDecoration: "none", color:"#551e19"}} to="/login">Log-In</Link>
                                 </Message>
                               </Grid.Column>
                             </Grid>

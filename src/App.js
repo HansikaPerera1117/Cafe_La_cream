@@ -11,7 +11,7 @@ import  LogoLaCream from './assets/images/Logo.png'
 import NavBar from './components/navBar/NavBar';
 import PageMain from './views/pageMain/PageMain';
 import PageProducts from './views/pageProducts/PageProducts';
-import {CardData} from './constants/CardData'
+import RouterHandler from './router/RouterHandler';
 
 
 function App() {
@@ -28,20 +28,11 @@ function App() {
           <link href="https://fonts.googleapis.com/css2?family=Arima&family=Belleza&family=Buda:wght@300&family=Inter:wght@500;700&family=Marko+One&family=Merienda&family=Nunito+Sans&family=Oooh+Baby&family=Over+the+Rainbow&family=Overlock+SC&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap" rel="stylesheet"/>
           
           </head>
-        <main>
-        {/* <Start/> */}
-        {/* <Login/> */}
-        {/* <SignUp/> */}
-        <NavBar/>
-        <PageMain/>
-        <PageProducts/>
-        <CardData/>
         
-        </main>
-        <footer>
 
-        </footer>
-        
+        <RouterHandler/>
+
+      
       </div>
     
   );

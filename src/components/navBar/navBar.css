@@ -1,0 +1,10 @@
+#navBar {
+  background: rgba(0, 0, 0, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+}
+#navBar a {
+  color: #e6b17e;
+}/*# sourceMappingURL=navBar.css.map */

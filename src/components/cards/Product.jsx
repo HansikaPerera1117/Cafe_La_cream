@@ -10,6 +10,7 @@ export default function Product(props) {
   return (
     <Card
         className="p-cards shadow"
+        key={props.id}
         image={props.imageSrc}
         header={props.header}
         meta={props.meta}

@@ -1,0 +1,17 @@
+.p-cards {
+  height: 480px;
+  width: 230px !important;
+  margin-left: 40px !important;
+  margin-bottom: 30px !important;
+}
+.p-cards .content .header {
+  font-family: "Inter" !important;
+  font-weight: bold;
+}
+.p-cards .content .meta {
+  margin-top: 10px;
+  font-family: "Arima" !important;
+}
+.p-cards .content .description {
+  font-family: "Nunito Sans" !important;
+}/*# sourceMappingURL=product.css.map */

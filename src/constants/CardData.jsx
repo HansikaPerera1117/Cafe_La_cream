@@ -1,8 +1,8 @@
-import React, { useEffect ,useState} from 'react'
-import { useSelector } from 'react-redux';
+// import React, { useEffect ,useState} from 'react'
+// import { useSelector } from 'react-redux';
 
-import { connect } from 'react-redux'
-import { buyMohito } from '../redux/action'
+// import { connect } from 'react-redux'
+// import { buyMohito } from '../redux/action'
 
 
 import mohito from '../assets/images/page/mohito.jpg'
@@ -25,226 +25,206 @@ import spaghetti from '../assets/images/page/spaghetti.jpg'
 import noodless from '../assets/images/page/noodless.jpg'
 
 
-export let beveragesData = [];
+// export function CardData() {
 
-export function CardData() {
+//   // const object = useSelector(state => state);
 
-  const object = useSelector(state => state);
-  console.log(object);
+//   // useEffect(() => {
 
-  useEffect(() => {
+//   //   const objectList = Array.isArray(object) ? object.map(item => {
+//   //     console.log(item , 'item');
+//   //      }
+//   //     ) : null;
 
-    const objectList = Array.isArray(object) ? object.map(item => {
-      console.log(item , 'item');
-       }
-      ) : null;
-
-      console.log(objectList , 'objectList');
+ 
     
 
-    const mohito = object.mohito;
-    // console.log(mohito , 'mohito object');
-
-    const bubbleTea = object.bubbleTea;
-    // console.log(bubbleTea , 'bubbleTea object');
-
-    const pinappleMS = object.pinappleMS;
-    // console.log(pinappleMS , 'pinappleMS object');
-
-    const capachino    = object.capachino;
-    // console.log(capachino , 'capachino object');
-
-    const chocolateMS = object.chocolateMS;
-    // console.log(chocolateMS , 'chocolateMS object');
-
-    const strawberryMS = object.strawberryMS;
-    // console.log(strawberryMS , 'strawberryMS object');
-
-    const latte = object.latte;
-    // console.log(latte , 'latte object');
-
-    const iceCoffee = object.iceCoffee;
-    // console.log(iceCoffee , 'iceCoffee object');
+//   //   const mohito = object.mohito;
+//   //   const bubbleTea = object.bubbleTea;
+//   //   const pinappleMS = object.pinappleMS;
+//   //   const capachino    = object.capachino;
+//   //   const chocolateMS = object.chocolateMS;
+//   //   const strawberryMS = object.strawberryMS;
+//   //   const latte = object.latte;
+//   //   const iceCoffee = object.iceCoffee;
 
 
-    beveragesData = [
-      {
-        id: 1,
-        imageSrc:mohito.imageSrc,
-        header:mohito.name,
-        meta:mohito.section,
-        description:mohito.description +' '+ mohito.price +' '+ mohito.qty +' items available',
-      },
-      {
-        id: 2,
-        imageSrc:bubbleTea.imageSrc,
-        header:bubbleTea.name,
-        meta:bubbleTea.section,
-        description:bubbleTea.description +' '+ bubbleTea.price +' '+ bubbleTea.qty +' items available',
-      },
-      {
-        id: 3,
-        imageSrc:pinappleMS.imageSrc,
-        header:pinappleMS.name,
-        meta:pinappleMS.section,
-        description:pinappleMS.description +' '+ pinappleMS.price +' '+ pinappleMS.qty +' items available',
-      },
-      {
-        id: 4,
-        imageSrc:capachino.imageSrc,
-        header:capachino.name,
-        meta:capachino.section,
-        description:capachino.description +' '+ capachino.price +' '+ capachino.qty +' items available',
-      },
-      {
-        id: 5,
-        imageSrc:chocolateMS.imageSrc,
-        header:chocolateMS.name,
-        meta:chocolateMS.section,
-        description:chocolateMS.description +' '+ chocolateMS.price +' '+ chocolateMS.qty +' items available',
-      },
-      {
-        id: 6,
-        imageSrc:strawberryMS.imageSrc,
-        header:strawberryMS.name,
-        meta:strawberryMS.section,
-        description:strawberryMS.description +' '+ strawberryMS.price +' '+ strawberryMS.qty +' items available',
-      },
-      {
-        id: 7,
-        imageSrc:latte.imageSrc,
-        header:latte.name,
-        meta:latte.section,
-        description:latte.description +' '+ latte.price +' '+ latte.qty +' items available',
-      },
-      {
-        id: 8,
-        imageSrc:iceCoffee.imageSrc,
-        header:iceCoffee.name,
-        meta:iceCoffee.section,
-        description:iceCoffee.description +' '+ iceCoffee.price +' '+ iceCoffee.qty +' items available',
-      }
+//   //   beveragesData = [
+//   //     {
+//   //       id: 1,
+//   //       imageSrc:mohito.imageSrc,
+//   //       header:mohito.name,
+//   //       meta:mohito.section,
+//   //       description:mohito.description +' '+ mohito.price +' '+ mohito.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 2,
+//   //       imageSrc:bubbleTea.imageSrc,
+//   //       header:bubbleTea.name,
+//   //       meta:bubbleTea.section,
+//   //       description:bubbleTea.description +' '+ bubbleTea.price +' '+ bubbleTea.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 3,
+//   //       imageSrc:pinappleMS.imageSrc,
+//   //       header:pinappleMS.name,
+//   //       meta:pinappleMS.section,
+//   //       description:pinappleMS.description +' '+ pinappleMS.price +' '+ pinappleMS.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 4,
+//   //       imageSrc:capachino.imageSrc,
+//   //       header:capachino.name,
+//   //       meta:capachino.section,
+//   //       description:capachino.description +' '+ capachino.price +' '+ capachino.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 5,
+//   //       imageSrc:chocolateMS.imageSrc,
+//   //       header:chocolateMS.name,
+//   //       meta:chocolateMS.section,
+//   //       description:chocolateMS.description +' '+ chocolateMS.price +' '+ chocolateMS.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 6,
+//   //       imageSrc:strawberryMS.imageSrc,
+//   //       header:strawberryMS.name,
+//   //       meta:strawberryMS.section,
+//   //       description:strawberryMS.description +' '+ strawberryMS.price +' '+ strawberryMS.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 7,
+//   //       imageSrc:latte.imageSrc,
+//   //       header:latte.name,
+//   //       meta:latte.section,
+//   //       description:latte.description +' '+ latte.price +' '+ latte.qty +' items available',
+//   //     },
+//   //     {
+//   //       id: 8,
+//   //       imageSrc:iceCoffee.imageSrc,
+//   //       header:iceCoffee.name,
+//   //       meta:iceCoffee.section,
+//   //       description:iceCoffee.description +' '+ iceCoffee.price +' '+ iceCoffee.qty +' items available',
+//   //     }
 
-    ];
+//   //   ];
 
 
-    console.log(beveragesData,'beverage array');
+//   // },[]);
 
-  },[]);
+//     // const objectList = Array.isArray(object) ? object.map(item => 
 
-    // const objectList = Array.isArray(object) ? object.map(item => 
-
-    //   mohito = item.data.mohito
+//     //   mohito = item.data.mohito
       
-    //   ) : null;
+//     //   ) : null;
 
-    //   console.log(objectList,'object list');
+//     //   console.log(objectList,'object list');
 
-    //   const mohitoOjb = {
-    //     id: 1,
-    //     imageSrc:mohito.imageSrc,
-    //     header:mohito.name,
-    //     meta:mohito.section,
-    //     description:mohito.description +' '+ mohito.price +' '+ mohito.qty +' items available',
-    // }
+//     //   const mohitoOjb = {
+//     //     id: 1,
+//     //     imageSrc:mohito.imageSrc,
+//     //     header:mohito.name,
+//     //     meta:mohito.section,
+//     //     description:mohito.description +' '+ mohito.price +' '+ mohito.qty +' items available',
+//     // }
 
-    const data = JSON.stringify(object);
+//     const data = JSON.stringify(object);
     
-    return (
-      <div>
-        {/* <p>Data: {data}</p> */}
-      </div>
-    );
-}
+//     return (
+//       <div>
+//         {/* <p>Data: {data}</p> */}
+//       </div>
+//     );
+// }
 
-// export const beveragesData = [
-//     {
-//       id: 1,
-//       imageSrc:`${mohito}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 2,
-//       imageSrc:`${bubbleTea}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 3,
-//       imageSrc:`${pinapleMS}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 4,
-//       imageSrc:`${cappuccino}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 5,
-//       imageSrc:`${chocoMS}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 6,
-//       imageSrc:`${stberyMS}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 7,
-//       imageSrc:`${latte}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//     {
-//       id: 8,
-//       imageSrc:`${iceCoffe}`,
-//       header:'Double Chese Chicken Burger',
-//       meta:'Burgers Section',
-//       description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
-//     },
-//   ];
+export const beveragesData = [
+    {
+      id: 1,
+      imageSrc:`${mohito}`,
+      header:'Mohito(Alcoholic/Non-Alcoholic)r',
+      meta:'Beverages Section',
+      description:'Mohito (Alcoholic/Non-Alcoholic) Rs 350/= ',
+    },
+    {
+      id: 2,
+      imageSrc:`${bubbleTea}`,
+      header:'Bubble Tea (Nutella)',
+      meta:'Beverages Section',
+      description:'Bubble Tea With Nutella and Whip Cream Rs 650/=',
+    },
+    {
+      id: 3,
+      imageSrc:`${pinapleMS}`,
+      header:'Pinapple Milk Shake With Whip Cream',
+      meta:'Beverages Section',
+      description:'Pinapple Milk Shake With Whip Cream Rs 750/=',
+    },
+    {
+      id: 4,
+      imageSrc:`${cappuccino}`,
+      header:'Capachino With Cokkies',
+      meta:'Beverages Section',
+      description:'Capachino With Chocolate Chip Cokkies Rs 450/=',
+    },
+    {
+      id: 5,
+      imageSrc:`${chocoMS}`,
+      header:'Chocolate Milk Shake With Choco Bolls',
+      meta:'Beverages Section',
+      description:'Chocolate Milk Shake With Choco Bolls Rs 850/=',
+    },
+    {
+      id: 6,
+      imageSrc:`${stberyMS}`,
+      header:'Strawberry Milk Shake With Wonder Cone',
+      meta:'Beverages Sectionn',
+      description:'Strawberry Milk Shake With Wonder Cone Rs 850/=',
+    },
+    {
+      id: 7,
+      imageSrc:`${latte}`,
+      header:'Coffee Latte With Marshmallow',
+      meta:'Beverages Section',
+      description:'Coffee Latte With Marshmallow Rs 750/=',
+    },
+    {
+      id: 8,
+      imageSrc:`${iceCoffe}`,
+      header:'Ice Coffee with Whip Cream',
+      meta:'Beverages Section',
+      description:'Ice Coffee with Whip Cream and Choco Rolls Rs 650/=',
+    },
+  ];
   
 
   export const bunsData = [
     {
       id: 1,
       imageSrc:`${beefBerger}`,
-      header:'Spaghetti With Spicy Chicken Source',
-      meta:'Burgers Section',
-      description:'Double Cheese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Beef Burger With French Fries',
+      meta:'Burger Section',
+      description:'Beef Burger With French Fries Rs 1200/=',
     },
     {
       id: 2,
       imageSrc:`${sandwitch}`,
-      header:'Double Cheese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Cheese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Chicken & Backen Sandwitch',
+      meta:'Sandwitch Section',
+      description:'Chicken & Backen Sandwitch With French Fries Rs 1250/=',
     },
     {
       id: 3,
       imageSrc:`${cheesBurger}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Double Cheese Chicken Burger',
+      meta:'Burger Section',
+      description:'Double Cheese Chicken Burger With French Fries Rs 950/=',
     },
     {
       id: 4,
       imageSrc:`${submarine}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Crispy Chicken Submarine',
+      meta:'Burger Section',
+      description:'Crispy Chicken Submarine With French Fries Rs 1450/=',
     },
   
   ];
@@ -253,30 +233,30 @@ export function CardData() {
     {
       id: 1,
       imageSrc:`${spaghetti}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Spaghetti With Spicy Chicken Source',
+      meta:'Pasta Section',
+      description:'Spaghetti With Spicy Chicken Tomato Source Rs 1350/=',
     },
     {
       id: 2,
       imageSrc:`${mashPotato}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Mash Potato With Fried Prawns',
+      meta:'Salad Section',
+      description:'Mash Potato With Fried Prawns Rs 1150/=',
     },
     {
       id: 3,
       imageSrc:`${noodless}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Sea Food Spicy Noodles',
+      meta:'Noodles Section',
+      description:'Sea Food Spicy Noodles Rs 1250/=',
     },
     {
       id: 4,
       imageSrc:`${biriyani}`,
-      header:'Double Chese Chicken Burger',
-      meta:'Burgers Section',
-      description:'Double Chese Chicken Burger Lorem ipsum dolor sit amet,',
+      header:'Chicken Biriyani with Raita',
+      meta:'Biriyani Section',
+      description:'Indian Chicken Biriyani with Raita Rs 1650/=',
     },
 
   ];

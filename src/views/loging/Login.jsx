@@ -4,9 +4,17 @@ import './login.scss'
 import  BG from '../../assets/images/bg-3.png'
 import  loginImg from '../../assets/images/login.jpg'
 import  LogoLaCream from '../../assets/images/Logo.png'
+import { Link } from 'react-router-dom';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export class Login extends Component {
+
+  componentDidMount() {
+    AOS.init();
+  }
+
   render() {
 
     const myStyleLoginBg={
@@ -24,7 +32,7 @@ export class Login extends Component {
               <div id='loginFCont' className='row'>
                 <div className="col-6">
                   <div className="row  align-items-center justify-content-center">
-                      <div className="col-8 bg-light shadow" style={{height:550,borderRadius:20}}>
+                      <div data-aos="flip-right" data-aos-delay ="1100" data-aos-duration="2000" className="col-8 bg-light shadow" style={{height:550,borderRadius:20}}>
                           <Grid textAlign='center'style={{ height: 550 }} verticalAlign='middle'>
                             <Grid.Column style={{ maxWidth: 450 }}>
                               <Header as='h1' textAlign='center' style={{fontFamily:'Arima',fontWeight:'bold'}}>
@@ -47,7 +55,7 @@ export class Login extends Component {
                                 </Segment>
                               </Form>
                               <Message className='mt-5'>
-                                New to us ? <a href='#' style={{textDecoration:"none",color:"#551e19"}}>Sign Up</a>
+                                New to us ? <Link style={{textDecoration: "none", color:"#551e19"}} to="/signup">Sign Up</Link>
                               </Message>
                             </Grid.Column>
                           </Grid>
@@ -56,7 +64,7 @@ export class Login extends Component {
                 </div>
                 <div className="col-5">
                 <div className="row  align-items-center justify-content-start">
-                      <div className="col-8">
+                      <div  data-aos="flip-left" data-aos-duration="2000" className="col-8">
                           <Image className='shadow rounded'  src={loginImg}/>
                       </div>
                 </div>
