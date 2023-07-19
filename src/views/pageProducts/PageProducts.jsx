@@ -15,8 +15,6 @@ export class PageProducts extends Component {
   
   render() {
 
- console.log(CardData.beveragesData,'pageproduct');
-
     const beverages = CardData.beveragesData.map((item) => (
       <Product
         key = {item.id}

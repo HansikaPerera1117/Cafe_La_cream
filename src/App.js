@@ -1,8 +1,9 @@
 import 'semantic-ui-css/semantic.min.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.scss'
-import {Provider} from 'react-redux'
+
 import store from "./redux/storeConfig/store"
+import {Provider} from 'react-redux'
 
 import Start from './views/start/Start';
 import  SignUp  from './views/signUp/SignUp';
@@ -29,8 +30,10 @@ function App() {
           
           </head>
         
-
-        <RouterHandler/>
+          <Provider store={store}>
+            <RouterHandler/>
+          </Provider>
+       
 
       
       </div>

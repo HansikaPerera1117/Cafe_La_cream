@@ -5,6 +5,9 @@ import  BG from '../../assets/images/bg-3.png'
 import  loginImg from '../../assets/images/login.jpg'
 import  LogoLaCream from '../../assets/images/Logo.png'
 import { Link } from 'react-router-dom';
+import { userLogIn } from '../../redux/action/loginAction'
+import {connect} from "react-redux";
+// import {withRouter} from "react-router-dom";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,7 +18,15 @@ export class Login extends Component {
     AOS.init();
   }
 
-  render() {
+    handleOnLogIn = () =>{
+      this.props.userLogIn(true)
+
+      // const { history } = this.props;
+      // history.push('/view');
+
+    }
+
+    render() {
 
     const myStyleLoginBg={
       backgroundImage:`url(${BG})`,
@@ -24,6 +35,9 @@ export class Login extends Component {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
   };
+
+      let { isLoggedIn } = this.props;
+      console.log(isLoggedIn,'prop login');
 
     return (
         <>
@@ -48,10 +62,10 @@ export class Login extends Component {
                                     placeholder='Password'
                                     type='password'
                                   />
-
-                                  <Button fluid size='large' style={{background:'#551e19',color:'#e6b17e'}}>
-                                    Login
+                                  <Button fluid size='large' style={{background:'#551e19',color:'#e6b17e'}} onClick={this.handleOnLogIn}>
+                                        Login
                                   </Button>
+                                 
                                 </Segment>
                               </Form>
                               <Message className='mt-5'>
@@ -59,26 +73,38 @@ export class Login extends Component {
                               </Message>
                             </Grid.Column>
                           </Grid>
+                          
                       </div>
                   </div>
                 </div>
+
                 <div className="col-5">
-                <div className="row  align-items-center justify-content-start">
-                      <div  data-aos="flip-left" data-aos-duration="2000" className="col-8">
-                          <Image className='shadow rounded'  src={loginImg}/>
-                      </div>
+                  <div className="row  align-items-center justify-content-start">
+                        <div  data-aos="flip-left" data-aos-duration="2000" className="col-8">
+                            <Image className='shadow rounded'  src={loginImg}/>
+                        </div>
+                  </div>
                 </div>
-                </div>
-                
-              
               </div>
             </div>
           </div>
 
         </>
-     
     )
   }
 }
 
-export default Login
+const mapStateToProps = state => {
+  console.log(state.isLogIn,'state login');
+  return{
+    isLoggedIn : state.isLogIn
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+  userLogIn : data => dispatch(userLogIn(data))
+})
+
+// export default connect(mapStateToProps , mapDispatchToProps)(withRouter(Login));
+export default connect(mapStateToProps , mapDispatchToProps)(Login);
+

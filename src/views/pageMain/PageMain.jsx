@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Image,Button} from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 import mainBg from '../../assets/images/page/mainBg.jpg'
 import './pageMain.scss'
 
@@ -13,6 +13,7 @@ export class PageMain extends Component {
   }
 
   render() {
+
     const myStyle={
       backgroundImage:`url(${mainBg})`,
       height: '120vh',
@@ -33,7 +34,7 @@ export class PageMain extends Component {
                     </div>
                     <div className="col-lg-12 col-md-12 col-sm-12 mt-5">
                       <div className="row justify-content-start">
-                        <Button  data-aos="flip-left" data-aos-delay ="1700"  data-aos-duration="2000" className='col-5 ms-5 rounded' id='start-btn'>Order Your Moment</Button>
+                        <Button data-aos="flip-right"  data-aos-delay ="1700" data-aos-duration="2000" className='col-5 ms-5 rounded' id='start-btn'>Order Your Moment</Button>
                       </div>
                     </div>
 

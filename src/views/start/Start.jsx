@@ -34,8 +34,8 @@ export class Start extends Component {
                 <h4 data-aos="zoom-in-left"  data-aos-duration="2000" className='col-lg-12 col-md-12 col-sm-12 mt-1' style={{fontFamily:'Oooh Baby',fontSize:23}} >Enjoy your moment with A Mug Shot of Cafe La Cream</h4>
                 <div className="col-lg-4 col-md-6 col-sm-12 mt-5 ">
                   <div className="row justify-content-center">
-                    <Link to="/view">
-                      <Button data-aos="flip-right" data-aos-delay ="1000" data-aos-duration="2000" className='col-5 rounded' id='start-btn' basic>Enjoy Your Day</Button>
+                    <Link to="/view" className='col-5'>
+                      <Button data-aos="flip-right" data-aos-delay ="1200" data-aos-duration="2000" className='col-12 rounded' id='start-btn' basic>Enjoy Your Day</Button>
                     </Link>
                   </div>
                 </div>
