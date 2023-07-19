@@ -3,6 +3,7 @@ import {Card} from 'semantic-ui-react'
 import Product from "../../components/cards/Product";
 import * as  CardData from "../../constants/CardData";
 import "./pageProducts.scss"
+import underline from "../../assets/images/underline.png"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -49,11 +50,12 @@ export class PageProducts extends Component {
     return (
       <div>
 
-        <div className="row justify-content-center" style={{height:2430,backgroundColor:'#f3d8a5'}}>
+        <div className="row justify-content-center bg-light" style={{height:2430}}>
             <div className="col-10 ">
                 <div data-aos="zoom-in-up"   data-aos-duration="1500"  className="col-12  text-center mt-5">
-                    <h5  style={{fontFamily:'Merienda',color:'white'}}>Choose Best Items </h5>
+                    <h5  style={{fontFamily:'Merienda',color:'#cbb39d'}}>Choose Best Items </h5>
                     <h1 className='fw-bolder' style={{fontFamily:'Belleza',color:'#551e19'}}>Most Populer Products</h1>
+                    <img src={underline} />
                 </div>
                 <div className="col-12">
                     <h4 data-aos="fade-right"  data-aos-duration="1500" className='mt-4 mb-4' style={{fontFamily:'Merienda',textDecoration:'underline'}}>Beverages</h4>

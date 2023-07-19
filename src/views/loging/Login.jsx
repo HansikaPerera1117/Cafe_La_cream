@@ -9,20 +9,88 @@ import { userLogIn } from '../../redux/action/loginAction'
 import {connect} from "react-redux";
 // import {withRouter} from "react-router-dom";
 
+import store from '../../redux/storeConfig/store'
+import { ToastContainer , toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export class Login extends Component {
 
-  componentDidMount() {
-    AOS.init();
+  stateLogin = {
+    email : 'hansikaperera59@gmail.com',
+    password : '12345'
   }
 
+    constructor(props) {
+      super(props);
+      this.state = {
+        inputValueEmail: '',
+        inputValuePassword: ''
+      };
+    }
+
+    componentDidMount() {
+      AOS.init();
+    }
+
+    
     handleOnLogIn = () =>{
-      this.props.userLogIn(true)
+      if(this.state.inputValueEmail === this.stateLogin.email && this.state.inputValuePassword === this.stateLogin.password){
+        this.props.userLogIn(true)
+      } else{
+        this.props.userLogIn(false)
+      }
+      
 
       // const { history } = this.props;
       // history.push('/view');
+
+      console.log('Name:', this.state.inputValueEmail);
+      console.log('Email:', this.state.inputValuePassword);
+
+      //-----------------notifications-------------------------------------
+      const loginValue = store.getState().isLogIn
+
+      loginValue ?
+                  toast.success('Login Successfully !😃', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    })
+                  :
+                  toast.error('Login Unsuccessfully !😟', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+          
+      
+        // when empty email and password fields
+      if(this.state.inputValueEmail === '' && this.state.inputValuePassword === ''){
+          toast.warn('Enter Your Email and Password 🧐', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+      }
 
     }
 
@@ -39,8 +107,22 @@ export class Login extends Component {
       let { isLoggedIn } = this.props;
       console.log(isLoggedIn,'prop login');
 
+
     return (
         <>
+         <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              limit={5}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+           />
           <div id='login' style={myStyleLoginBg}>
             <div className="container">
               <div id='loginFCont' className='row'>
@@ -54,18 +136,14 @@ export class Login extends Component {
                               </Header>
                               <Form size='large' className='mt-5'>
                                 <Segment stacked>
-                                  <Form.Input fluid icon='mail' iconPosition='left' placeholder='E-mail address' />
-                                  <Form.Input
-                                    fluid
-                                    icon='lock'
-                                    iconPosition='left'
-                                    placeholder='Password'
-                                    type='password'
-                                  />
-                                  <Button fluid size='large' style={{background:'#551e19',color:'#e6b17e'}} onClick={this.handleOnLogIn}>
-                                        Login
-                                  </Button>
-                                 
+                                  <Form.Input id="inputEmail" fluid icon='mail' iconPosition='left' placeholder='E-mail address'  name="email" value={this.state.inputValueEmail}
+                                   onChange={e => this.setState({ inputValueEmail: e.target.value })} />
+
+                                  <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password' type='password' value={this.state.inputValuePassword} 
+                                  onChange={e => this.setState({ inputValuePassword: e.target.value })}/>
+
+                                  <Button fluid size='large' style={{background:'#551e19',color:'#e6b17e'}} onClick={this.handleOnLogIn}>Login</Button> 
+                                
                                 </Segment>
                               </Form>
                               <Message className='mt-5'>
